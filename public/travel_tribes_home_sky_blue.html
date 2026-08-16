@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TRAVEL TRIBES | Find Your Tribe. Travel Your Story.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#2c1514",
+                "secondary-container": "#e1dfdb",
+                "on-tertiary-container": "#ad8987",
+                "on-secondary-fixed-variant": "#474744",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#1c1b1b",
+                "inverse-on-surface": "#f3f0ef",
+                "on-secondary-fixed": "#1b1c19",
+                "surface-container-high": "#ebe7e7",
+                "surface": "#fcf9f8",
+                "surface-variant": "#e5e2e1",
+                "primary-fixed-dim": "#b4ccbe",
+                "tertiary-fixed": "#ffdad8",
+                "surface-dim": "#dcd9d9",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "background": "#fcf9f8",
+                "surface-container-highest": "#e5e2e1",
+                "on-primary-fixed-variant": "#364b40",
+                "tertiary": "#26100f",
+                "primary": "#0284c7",
+                "surface-bright": "#fcf9f8",
+                "primary-container": "#e0f2fe",
+                "surface-tint": "#4d6357",
+                "on-secondary": "#ffffff",
+                "secondary": "#5e5e5b",
+                "tertiary-fixed-dim": "#e5bdbb",
+                "surface-container-low": "#f6f3f2",
+                "surface-container": "#f0edec",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#424844",
+                "primary-fixed": "#bae6fd",
+                "inverse-surface": "#313030",
+                "on-primary-fixed": "#082f49",
+                "on-primary-container": "#0369a1",
+                "inverse-primary": "#7dd3fc",
+                "on-secondary-container": "#63635f",
+                "on-error-container": "#93000a",
+                "secondary-fixed": "#e4e2dd",
+                "outline": "#727874",
+                "on-tertiary-fixed-variant": "#5c3f3e",
+                "outline-variant": "#c2c8c2",
+                "tertiary-container": "#3d2423",
+                "on-background": "#1c1b1b",
+                "error-container": "#ffdad6",
+                "secondary-fixed-dim": "#c8c6c2"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "section-gap": "120px",
+                "grid-margin": "40px",
+                "section-gap-mobile": "64px",
+                "base": "8px",
+                "grid-gutter": "24px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-bold": [
+                        "Plus Jakarta Sans"
+                ],
+                "section-heading-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "section-heading": [
+                        "Plus Jakarta Sans"
+                ],
+                "hero-display-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "hero-display": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-bold": [
+                        "14px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "section-heading-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "section-heading": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "hero-display-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.03em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "hero-display": [
+                        "72px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(252, 249, 248, 0.95) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+        }
+        .nav-scrolled .nav-text {
+            color: #0284c7 !important;
+        }
+        .nav-scrolled .nav-logo {
+            color: #0284c7 !important;
+        }
+        
+        /* Editorial Image Overlay */
+        .editorial-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2, 132, 199, 0.8) 0%, rgba(2, 132, 199, 0) 50%);
+            border-radius: inherit;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center px-grid-margin py-6 w-full max-w-full mx-auto">
+<a class="nav-logo font-hero-display text-body-lg tracking-tighter font-black text-on-primary transition-colors duration-300" href="#">
+                TRAVEL TRIBES
+            </a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="nav-text font-label-bold text-label-bold text-on-primary/80 hover:text-on-primary transition-colors" href="#">Discover</a>
+<a class="nav-text font-label-bold text-label-bold text-on-primary border-b-2 border-on-primary pb-1 transition-colors" href="#">Tribes</a>
+<a class="nav-text font-label-bold text-label-bold text-on-primary/80 hover:text-on-primary transition-colors" href="#">Stories</a>
+<a class="nav-text font-label-bold text-label-bold text-on-primary/80 hover:text-on-primary transition-colors" href="#">Itineraries</a>
+</nav>
+<a class="hidden md:inline-flex items-center justify-center bg-primary-fixed text-on-primary-fixed font-label-bold text-label-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity" href="#">
+                Plan My Trip
+            </a>
+<button class="md:hidden nav-text text-on-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center pt-24">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A breathtaking, cinematic wide-angle shot of a group of diverse young friends standing on a rugged mountain peak at sunset. The sky is ablaze with brilliant sunset orange and deep purples, contrasting with the lush deep forest green of the valleys below. The lighting is golden hour, creating long, dramatic shadows and a sense of epic adventure and deep camaraderie. The visual style is highly aspirational, premium editorial travel photography with a modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAffGmdLPE4HXXOkW_7uSHImptt7oEaA7GfPr1Rco3JDsZexbPMtgqeyxftO4iYQ2_Jsh-ts0oSFe0WtnIdyzCy80YSD_7gn0sgytNK7TdE9NBIIiBH83Uz1BQBkpWD8mLI545bH8kzTP7VCdotmlHcE4azxGFU8q-AZBX-WT-UYn1j-Clmvfek6noot9O-iG-WR8HKXVqZydu1PGdJmGW6FI0vLIWi0_JWXcq7DgtyWcqIAz41t3Yk"/>
+<div class="absolute inset-0 bg-primary/40"></div>
+</div>
+<div class="relative z-10 text-center px-grid-margin max-w-5xl mx-auto flex flex-col items-center">
+<h1 class="font-hero-display-mobile md:font-hero-display text-hero-display-mobile md:text-hero-display text-on-primary mb-8 drop-shadow-lg">
+                Find Your Tribe.<br/>Travel Your Story.
+            </h1>
+<!-- Floating Search -->
+<div class="bg-surface p-2 rounded-full flex flex-col md:flex-row items-center gap-2 shadow-2xl w-full max-w-3xl mt-8">
+<div class="flex-1 flex items-center gap-3 px-4 py-2 text-on-surface-variant w-full md:w-auto">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface placeholder:text-outline p-0" placeholder="Where do you want to go?" type="text"/>
+</div>
+<div class="hidden md:block w-px h-8 bg-surface-variant"></div>
+<div class="flex-1 flex items-center gap-3 px-4 py-2 text-on-surface-variant w-full md:w-auto">
+<span class="material-symbols-outlined text-outline">calendar_month</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface placeholder:text-outline p-0" placeholder="When?" type="text"/>
+</div>
+<button class="w-full md:w-auto bg-[#FF6B35] text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-full hover:opacity-90 transition-opacity">
+                    Explore
+                </button>
+</div>
+</div>
+</section>
+<!-- Trending Places -->
+<section class="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">Trending Places</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover the most sought-after destinations our tribes are exploring right now.</p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-[#FF6B35] hover:opacity-80 transition-opacity" href="#">
+            View All <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<div class="group relative rounded-xl overflow-hidden h-[400px] cursor-pointer editorial-overlay">
+<img alt="Kashmir" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOzA0xmefeuQ-WaA0s0xGXyGQpnIi8xCi7-brm-v8P9Y7qy4sYM2dyvYP1XufpQtasf7AN--NGMU416bzCOI_aGvySyRvYv2xG05Zm4gJ4OMeFA6DgLW-DQJjqKjFtbywWkKzGYNhYvO3vCFa8_ojrF9-W9X6Y1Wub8GjQxyWXf8TMBwXAW61vqRUdisIq_9cl1Xgfz14-FYA3aWZw_tFB-k4P6wbYMyfgBMxk6YkIfxpvUK5ugaIv"/>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<h3 class="font-section-heading-mobile text-2xl text-on-primary mb-2">Kashmir</h3>
+<p class="font-body-md text-on-primary/80">The Paradise on Earth</p>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden h-[400px] cursor-pointer editorial-overlay">
+<img alt="Spiti Valley" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA-JTO_G8JhZ2yQj2ER_mvWARU5p_Us229JsRn7X5FSShzDocsm4-H9poKH1ao-woLl_qyXlJdjvzWWK1DVsbuLdHP81ZCcu-P5yjdWJCM0hRziRyR_JLQ6KuO9wzZRqW6nmj_U5WCu3rKbOnRbYvG1at5XMXR9wP9yxJN51DrVtzScPTxFCMEDnZDe_2r7biNdIltmnE4zHu8mseonGWPuXG4M4KlV6CDhPQ4UoUx43vJirLkOmj7"/>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<h3 class="font-section-heading-mobile text-2xl text-on-primary mb-2">Spiti Valley</h3>
+<p class="font-body-md text-on-primary/80">Rugged Himalayan Adventures</p>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden h-[400px] cursor-pointer editorial-overlay">
+<img alt="Bali" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC83zmMkmy0zDjnyG_Rkk21wcmQx8mPqxAIcoYpPicokHcMgpIkFKZCI-SOBaxEzPiWKlSlEtQyVcI0g0B3pe-qoryn8zO-i5AbvP7fblu4tDC0EoZ33EXtuAMtC56_rqskBFyIm7O-rEB6QZ-anQCR0X1LyJpuhwv06UlUTUEgJgIdElGw_0Sm7jYfZff1WyHqvRu4uUjCWcYLYIbcV4vh7vfKXpRpFB_UUZhtSVPKATQfQqGVhQTt"/>
+<div class="absolute bottom-0 left-0 p-6 z-10 w-full">
+<h3 class="font-section-heading-mobile text-2xl text-on-primary mb-2">Bali</h3>
+<p class="font-body-md text-on-primary/80">Tropical Island Escapes</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Domestic Trips -->
+<section class="py-section-gap px-grid-margin max-w-[1440px] mx-auto bg-surface-container-low rounded-[2rem] my-12">
+<div class="text-center mb-12">
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">Incredible India</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Explore the diverse landscapes, rich culture, and untamed beauty of our homeland.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Himachal Pradesh" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP-Tcr8V_pAtclL9cKRqDuv5wre4RHBTG7CQ280z1KgkyjJksLrtqOrVA47uSGG0TatwegwAaKj84KTeeKwd44sQ0QRmxohqYPpilBsM0KySOsv171jHWLJHv11zvUw0eRvX-gIXT45lF5jHKaN0Kr6UJX_ktIw4Lnv_uXnzwr9gobIZ_MXj0f4psEXhHtpvDcjua-8s1Bozk-rL0icexq4V7LB6IH_8OINOK-mUNkQxvosyGETiN-"/>
+<div class="p-5">
+<h3 class="font-label-bold text-lg mb-2">Himachal Retreats</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">6 Days • Mountains &amp; Monasteries</p>
+<div class="flex justify-between items-center">
+<span class="font-label-bold text-[#FF6B35]">From ₹24,999</span>
+<button class="text-primary hover:text-[#FF6B35] transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Kerala" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB52__eYZgsFdXujf8SYO4L0L_9t2TVBtAm1lbqz1zDSuT35mkLPEi5k9O4_-KRr_7hjKU6Gejhx8n3RrKrw2yQeMAp046sGJEuFDC-9zwLDGOxjMNGKba_-VoLPyu1g3eexXj4xoq_76N_XSUrk_bj4kRBQfe7KQo0PM4tQHUt1R3VCI5hTHfy3ohj56AKw68dcDBDi4cHCnBMFM3Lc8jq9X1ObeRnry_vNnZP3mUM4T0RjYDzPdMH"/>
+<div class="p-5">
+<h3 class="font-label-bold text-lg mb-2">Kerala Backwaters</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">5 Days • Nature &amp; Serenity</p>
+<div class="flex justify-between items-center">
+<span class="font-label-bold text-[#FF6B35]">From ₹18,500</span>
+<button class="text-primary hover:text-[#FF6B35] transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Rajasthan" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRjpxm4zWI8lMQl4BwC7bI0Qb1HATG6gXOJgunjabqU08UumPai7FBCXWFY4BGqcRogpiCVJCQet8TYYtwyyPswgRV7e00rwaURjfYZNAx3aiaZkUBtYlVCQ_JE3MWrjI3CTyGEYloECiSmgf0et65-1ahxlhpRUPYV-P_HRRv3gC5FiV08HVJ9awZJOIn1h6AtX9R0fsjpOxbVD3OVeDIk7Mn2C7ytQze9C3gvNqwaHW9eXHvL_V"/>
+<div class="p-5">
+<h3 class="font-label-bold text-lg mb-2">Royal Rajasthan</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">7 Days • Heritage &amp; Deserts</p>
+<div class="flex justify-between items-center">
+<span class="font-label-bold text-[#FF6B35]">From ₹29,999</span>
+<button class="text-primary hover:text-[#FF6B35] transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Meghalaya" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUZdC4cbP6enyWXmXSMVKFL7ZBcuIATV1E-T-ixsy3_lewrJ04DMQjnuq0qKp_Om001apSti8p39s0HL8z9teSaj6egcAqA3VQgTtetIURWRYhE56JJNPBrr1Ic1dmjV4-Riagwi-ydpDt9W9xgnzxo5MdmbSbod9rw0qqjh8ENJ9XkqSkYmgz3Po98g6Rt0nx2HLR1zseLlGZ6fm5vNJmgEelVtoC6d_cpXzeunlAOes8t7DPdhqN"/>
+<div class="p-5">
+<h3 class="font-label-bold text-lg mb-2">Mystical Meghalaya</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">5 Days • Waterfalls &amp; Caves</p>
+<div class="flex justify-between items-center">
+<span class="font-label-bold text-[#FF6B35]">From ₹22,000</span>
+<button class="text-primary hover:text-[#FF6B35] transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- International Trips -->
+<section class="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">Global Adventures</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Cross borders and collect stories with our curated international expeditions.</p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-bold text-label-bold text-[#FF6B35] hover:opacity-80 transition-opacity" href="#">
+            Explore All <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<div class="group relative rounded-xl overflow-hidden h-[500px] cursor-pointer">
+<img alt="Vietnam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWwRRz_jGrLvCs4Yp83KLelEu8AdfubR49MPehhMLfNjEWb8V5V8KVlpLoWnPgZZFF-LZU23u7q9lTYZQIBGs_JhnLsGBpgCja3dDCTQcoYTxDmCDLWKOuYfEI3mnb2C5sHK5xPXLFybcv5HaxP93ZhwEBjQ6htdbzT0ShpG8c9XfFgp2DPA18au2ZcVBs55qLXGT7pvqqhC4c1eRW8t9HhWCOr8D6uTPS7Qz2u772S0KWoE1echA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<span class="inline-block px-3 py-1 bg-[#FF6B35] text-on-primary text-xs font-label-bold rounded-full w-fit mb-3">Popular</span>
+<h3 class="font-section-heading-mobile text-3xl text-on-primary mb-2">Vietnam</h3>
+<p class="font-body-md text-on-primary/90 mb-4">From Hanoi's bustling streets to the serene waters of Ha Long Bay.</p>
+<button class="flex items-center gap-2 text-on-primary font-label-bold hover:text-[#FF6B35] transition-colors w-fit">View Itinerary <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden h-[500px] cursor-pointer">
+<img alt="Thailand" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2zm1Fhz10rHSiObjpRem0wdaDDFbOPduwFNFJbvlKuKt0F4eOGvx1e-MTUXlk63gdxO7gr3S3Mn7LOlYXXv2k3v9P5DrFSD3ZReT3PsgvyjGGkR-GhsW32wOpKMu7C_vZKgzeSWalCFCpZ8QtEjuLrVTsQ4WCiwMzZ1tf1G8Zy7pXOPLxqbBMKon6YfdggCDDpNkTPtzOV06i9V8HYXPTg6e1y7IWdwsWF_ndl3lmwuixAICTb3Lf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-section-heading-mobile text-3xl text-on-primary mb-2">Thailand</h3>
+<p class="font-body-md text-on-primary/90 mb-4">A perfect blend of culture, cuisine, and stunning island beaches.</p>
+<button class="flex items-center gap-2 text-on-primary font-label-bold hover:text-[#FF6B35] transition-colors w-fit">View Itinerary <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden h-[500px] cursor-pointer">
+<img alt="Bhutan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANjAH7kFfSr0xHGamYqTSaC6TIblL7RLxM2Pj9zjWEHfM0mWOE3ACDf43z4qbJvBbMyC7VOJBjK1xuVTCabimgwRNe1T8WJZOP_wMGhuHeHqcJS9cRDv1gXHZFAvQxM97UkxCbgq1vreJmQDlae8UTT7WVZdAf6BbVnB9wjt9MDcEXJA6Jrnp9b_ca-eu6uocA5KEClU79gbk_n40yB9n-7L6m90AWNPOr7iWRmxX1tjE4GacGjfJ0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-section-heading-mobile text-3xl text-on-primary mb-2">Bhutan</h3>
+<p class="font-body-md text-on-primary/90 mb-4">Journey into the mystical Kingdom of Happiness in the Himalayas.</p>
+<button class="flex items-center gap-2 text-on-primary font-label-bold hover:text-[#FF6B35] transition-colors w-fit">View Itinerary <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Honeymoon Destinations -->
+<section class="py-section-gap bg-[#0284c7]">
+<div class="px-grid-margin max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/3 text-on-primary">
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading mb-6">Romantic Escapes</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-8">Curated honeymoon experiences designed for couples seeking premium comfort, intimate moments, and unforgettable settings.</p>
+<button class="bg-[#FF6B35] text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-full hover:opacity-90 transition-opacity">
+                Plan Your Honeymoon
+            </button>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+<div class="relative rounded-2xl overflow-hidden h-[350px] group">
+<img alt="Maldives" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBydmJRHl-4TPxdBzn-B5yQ-hmuWu5k1Ivx4rZcR_S23BOJa70HdwWEBlf1PMvZaXZ7YvqiiHVAltBzd1FMQhW1wzcPoEBwN9d3p6tkDr7u1FGxfV1BvS2xiW5J8olFPmH_QD8Jg0sIN8MnUHC_JuvI_vn0kfWG16hBc1OXU3IKDnK_WR446teKfR53sOVnwJTbt8YAMeIBLFddTwwyJ8HHhcWmuFsYZ6kindQFGcjgrCLLAs8hg3Te"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<h3 class="text-on-primary font-section-heading-mobile text-3xl text-center px-4">Maldives<br/><span class="text-lg font-body-md font-normal">Overwater Luxury</span></h3>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden h-[350px] group mt-0 md:mt-12">
+<img alt="Bali Villas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmrG7QPhr_5kDEBOswJAN61h6-zpxmz7IxTOAyXHXaloBz64nuI1AOM_vrXdVC86TqxhvaFuDwfvqmcJAH6mxjAL9e2f0DrMFIJLvjH0JEsIxLnv98NO4uAGXUK8QbutbWo21hggflA015a45Sl31zAXbwPF2Ce9S4yMc4s8CCBOTSKpJ6kZHB-ar2DdgJ-WiQkhJVHpNiNN7N9HeZTDu1EUfOrZI4cXu4cICBNqK1ZW0SUmLWTTHl"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<h3 class="text-on-primary font-section-heading-mobile text-3xl text-center px-4">Ubud, Bali<br/><span class="text-lg font-body-md font-normal">Jungle Retreats</span></h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">Life In The Tribe</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Moments captured by our travelers. Real people, real adventures.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+<div class="col-span-2 row-span-2 rounded-xl overflow-hidden">
+<img alt="Campfire" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA652U2uEK1Kv-ZcjPn3okAgmuHC35-F2XEIwVF4l60hZuAW7WCxJpeqkiaSQlHINjdlRJ2DhF0X2QI76lL4ultDVYGM0lf857bBAUa2lEScnzGIaOhkuAtNpRKdpqyknLmdd_lf1JmfX5WHOn_w0MgETbhCOOi4IPC8ZfQQC2K5bfTFlgAlsCSzyFVtWzxgS9WLH3YSsjiBgfkMkWHkysYHCKpZm3CM5jjodgJS3O9MbzonvWkj20n"/>
+</div>
+<div class="rounded-xl overflow-hidden">
+<img alt="Trekking" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6_7Vh7Suu3pEoHETSk0OdeIwNsO7wETXBlZOdegOI3bE2aJmOXXX5hAskMOPqLN5uvceMDpxTesXtv_lEzTJLIfCKss0u25xs1ssoTRzBVt4zHlPuL9vrx-T_wtBHmgSX3KxWLZtcqHZ1jvoxXK5LmDlXJmlhNTSfCZ5hLnNvGM1NG8ovCRquxwnUYiIDgxeC1W5QKucLaScYkL8WPFsYeqfq86QvwIB0a2-D2aHEIVD34putRj9E"/>
+</div>
+<div class="rounded-xl overflow-hidden">
+<img alt="Roadtrip" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQnTRfsSf_9vn5JLBxFRsWq3iHBI4L4zK4lYDZH2eeQd7Yucc-5MmtvHAdoo-FElzrQsVGmbE4W6YCZOCK1nOsO4d4j36enZofTIGSPmT7QW0zpfJbv6xS0lCN6o0Hl5QPl2xYOi7vwkvbQbT007UqlFh0vqcUC8R1dbGvl9T-LobQizgYeEkzdPOmF4Yd3a_SXzVo0DYc0ndN4lcPK819gdNPhbZ730Qlz_iHbcrZritfjb3HD43K"/>
+</div>
+<div class="col-span-2 rounded-xl overflow-hidden">
+<img alt="Group Pic" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBQzM9yfXo7AwwD12xV5YduZCE4pmP7EBu3gAsHJUaoaxVZwuan1vxYQnCWypFD_LvFeYAoe8e6REqFljSbm5lCVfXLTyBIELsxR0ZcLnS71eEaJPZj114MNO7QcbxsWWop40DG0KywCvrA9vb3WSJ9lWFRrMC0een3ImPdyyMnp69DN2otphq7RFDCOEOe798Fmob62R7pIxaonD2n6YJu36q6gB6bIxDNZ0IHUzXksVGW8eG4JKR"/>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="px-grid-margin max-w-[1440px] mx-auto text-center">
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-16">Stories From The Tribe</h2>
+<div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
+<div class="min-w-[300px] md:min-w-[400px] bg-surface p-8 rounded-2xl text-left snap-center shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Sarah M." class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBpH5Bfyo0sQfpEbEv1_UosskTOPRgkKavDPbN9Szhd6EU03d1gt-OdfbHt4nJsPrPYMuPH6Hg0cS38OKk7hoJmxMpjR-sewei4BsngNlX3obHcPmHIjL80bXSS-zT1ACS1QZ52A9YZJwIasl2Td6UUkrGXtDNg4xJJWe4jIr87IcKNcm4HnoZtnItCKntZoQ_LME_7vR228BCJ3jn8KpnpxK55duvL4Nk-SChx_Ll9Xlyzo95rzfv"/>
+<div>
+<h4 class="font-label-bold text-on-background">Sarah M.</h4>
+<p class="text-sm text-on-surface-variant">Spiti Valley Expedition</p>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic">"Traveling with Travel Tribes completely changed my perspective. I came alone but left with a family. The local experiences were authentic and the guides were fantastic."</p>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] bg-surface p-8 rounded-2xl text-left snap-center shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Rahul D." class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIfryJZU3VE5mtgqclX-FAVvRGp-BQAF2ko49aKrOiBEmum48GwxyRZzriwclmIk1aIBUc4wThQQWEI5i_tGJI5HpO4AHyQasUGt6TIiHF4Gxxw6yCDpup8VOEIKZ9GQP2iRrA8uK516wuqZIdcVZex9IPK35NXDSPTyFA0ZRmrDxonB5DaqLjOtHexy891-A7yqTfxBqUa_ItiANcASDAgCU21kEDO_yIHN9gbVN5QTmKRAEg2GB8"/>
+<div>
+<h4 class="font-label-bold text-on-background">Rahul D.</h4>
+<p class="text-sm text-on-surface-variant">Vietnam Backpacking</p>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic">"The itinerary was perfectly balanced between adventure and downtime. Everything was handled seamlessly, allowing us to just immerse ourselves in the journey."</p>
+</div>
+<div class="min-w-[300px] md:min-w-[400px] bg-surface p-8 rounded-2xl text-left snap-center shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Priya &amp; Aman" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv6GXQiBAgCZN9xDKoNLP6B1licW1AJXysMYhJN3ovttFcTDMrteqWpEhCuGkXGo73Ouw5Dbza5-9DXFnjiWWEYLCAMTJCtvqV6XEC85aMuAMoXlITaLEUmN14hVqRPyU5rUT5Im7aRu0gpsI_QjDU_TfiWGp4s-kMRfJGBL3_fOn7VHNW3D1A6VbnrNLbAdyj9ecn6UxYKyBp9MJENRqgkNkG7SK2kENFVlNlvn55zNMSrRBVCfBX"/>
+<div>
+<h4 class="font-label-bold text-on-background">Priya &amp; Aman</h4>
+<p class="text-sm text-on-surface-variant">Maldives Honeymoon</p>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic">"They curated the most magical honeymoon for us. Every detail was personalized, and the resort recommendation was spot on. Highly recommend their premium services."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Blogs -->
+<section class="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">Get Inspired</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Travel guides, packing tips, and stories from the road.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<article class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-4 h-64">
+<img alt="Packing Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdeSD7wbNfocYGFnwHT5wL8gLAKXF3eEZ1QiA6P3iA_US0G3lPW6v96uE8CXsclWjAguNunPYlF5Pmyz2shKtXWG3pO_AM4KvFcLDilt6wItmbZJkMXt2ehMEb2j9lzDqlEchanIx8UalGs-BuwEGwMQzQ7ha5zuAAtRIZ95xxqbP6720cn44aW9dPy7hHy-ZxLBNLa76J7oonZgLBaOZSzFWajjx6InYA3xcFbqUMO1rZv3yvXEub"/>
+</div>
+<span class="text-[#FF6B35] font-label-bold text-xs uppercase tracking-wider mb-2 block">Travel Tips</span>
+<h3 class="font-section-heading-mobile text-xl mb-2 group-hover:text-primary transition-colors">The Ultimate Minimalist Packing Guide for Backpacking</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Learn how to pack light without sacrificing essentials for your next multi-week adventure across varied climates.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-4 h-64">
+<img alt="Offbeat Destinations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmKkdWU_tAEBg3kRzVsYKpnEc5CF7SCEIbaTYdUhXlDfP7WDZrIdY31XttYWpoip4_mZNHM5cE9mILceGUe-tf__XWD54nmZNt2OQC97sywagHZm7hSD7x3Sqp9FgQdNV_PVnu9SvKbljWazqTVtafur96cqKdRccCZ8HxRIi2Ds-nGx-VLEsJuRhRs8s0hFz33cbIYZmAaI8r-9mg9Ef6pZY-kWwpvuI6GUml3Pcoh9EtgLG51QDn"/>
+</div>
+<span class="text-[#FF6B35] font-label-bold text-xs uppercase tracking-wider mb-2 block">Destinations</span>
+<h3 class="font-section-heading-mobile text-xl mb-2 group-hover:text-primary transition-colors">5 Offbeat Himalayan Villages You Must Visit</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Escape the crowds and discover pristine nature and warm hospitality in these hidden gems of the north.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-4 h-64">
+<img alt="Solo Travel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjkdO3j8HGxI-n_yGijAUv5Y7RY1igi1EJI1Hqnwsk47YqtirSxR2q1juACcWP7oX2z24Bht6IekcW3fr3iGga_Nxkl8Pw20-EFw9d8bYSKqMb-7XvjfxzuX-NG4n3D_OYBgVvXfTbc4KOvd9Jc5eweHRoS5WKM7p2WOxBDj8GdRQ7JOMwgfKEGxykRqyb4urvlv00Jf_fDIKTeUa4ARZ8yVgU0Byt23nyyKoRGdgPo-npLgUxRyuV"/>
+</div>
+<span class="text-[#FF6B35] font-label-bold text-xs uppercase tracking-wider mb-2 block">Stories</span>
+<h3 class="font-section-heading-mobile text-xl mb-2 group-hover:text-primary transition-colors">Why Your First Solo Trip Will Change Your Life</h3>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">A personal account of overcoming fear and finding independence while navigating foreign streets alone.</p>
+</article>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-[#0284c7] text-center px-grid-margin">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-hero-display-mobile md:font-hero-display text-4xl md:text-6xl text-on-primary mb-6">Your Next Adventure Is Waiting.</h2>
+<p class="font-body-lg text-on-primary/80 mb-10 text-xl">Stop dreaming. Start planning. Join our next departure and find your tribe.</p>
+<button class="bg-[#FF6B35] text-on-primary font-label-bold text-label-bold px-10 py-5 rounded-full hover:opacity-90 transition-opacity text-lg">
+            Plan My Trip Now
+        </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low pt-20 pb-10 px-grid-margin">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<a class="font-hero-display text-2xl tracking-tighter font-black text-primary mb-6 block" href="#">
+                TRAVEL TRIBES
+            </a>
+<p class="font-body-md text-on-surface-variant mb-6">Curating unforgettable journeys and building communities of passionate travelers.</p>
+<div class="flex gap-4">
+<!-- Social Icons Placeholder -->
+<a class="text-on-surface-variant hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-on-surface-variant hover:text-primary" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-primary mb-6">Destinations</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">India</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Southeast Asia</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Europe</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Middle East</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-primary mb-6">Trip Types</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Group Tours</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Solo Travel</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Honeymoons</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Corporate Retreats</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-primary mb-6">Contact Us</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> hello@traveltribes.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span> +91 98765 43210</li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto border-t border-surface-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-sm text-on-surface-variant">© 2024 Travel Tribes. All rights reserved.</p>
+<div class="flex gap-6 font-body-md text-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple script for sticky nav color change
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body></html>
