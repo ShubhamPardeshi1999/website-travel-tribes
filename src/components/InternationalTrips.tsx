@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Carousel from "./ui/Carousel";
 
 export default function InternationalTrips() {
   const trips = [
@@ -28,12 +29,12 @@ export default function InternationalTrips() {
   ];
 
   return (
-    <section className="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
-      <motion.div 
+    <section className="py-10 max-w-[1440px] mx-auto">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
+        className="flex flex-col md:flex-row justify-between items-end mb-8 gap-2 px-grid-margin"
       >
         <div>
           <h2 className="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">
@@ -50,7 +51,11 @@ export default function InternationalTrips() {
           Explore All <ArrowRight className="w-5 h-5" />
         </Link>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+      <Carousel
+        className="w-full"
+        slideClassName="md:flex-[0_0_33.333333%] pr-4 sm:pr-6"
+        showArrows
+      >
         {trips.map((trip, idx) => (
           <motion.div
             key={idx}
@@ -58,7 +63,7 @@ export default function InternationalTrips() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="group relative rounded-xl overflow-hidden h-[500px] cursor-pointer"
+            className="group relative rounded-xl overflow-hidden h-[400px] md:h-[500px] cursor-pointer"
           >
             <Image
               src={trip.img}
@@ -82,7 +87,7 @@ export default function InternationalTrips() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </Carousel>
     </section>
   );
 }

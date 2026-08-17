@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Carousel from "./ui/Carousel";
 
 export default function DomesticTrips() {
   const trips = [
@@ -33,12 +34,12 @@ export default function DomesticTrips() {
   ];
 
   return (
-    <section className="py-section-gap px-grid-margin max-w-[1440px] mx-auto bg-surface-container-low rounded-[2rem] my-12">
-      <motion.div 
+    <section className="py-10 max-w-[1440px] mx-auto bg-surface-container-low rounded-[2rem]">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="md:text-center mb-8 px-grid-margin"
       >
         <h2 className="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">
           Incredible India
@@ -47,7 +48,11 @@ export default function DomesticTrips() {
           Explore the diverse landscapes, rich culture, and untamed beauty of our homeland.
         </p>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Carousel
+        className="w-full"
+        slideClassName="md:flex-[0_0_50%] lg:flex-[0_0_25%] pr-4 sm:pr-6"
+        showArrows
+      >
         {trips.map((trip, idx) => (
           <motion.div
             key={idx}
@@ -77,7 +82,7 @@ export default function DomesticTrips() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </Carousel>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { Share2, Camera, PlayCircle, Mail, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,7 +11,12 @@ export default function Footer() {
             href="#"
             className="font-hero-display text-2xl tracking-tighter font-black text-primary mb-6 block"
           >
-            TRAVEL TRIBES
+            <Image
+              src="/logo.jpg"
+              alt="Travel Tribes Logo"
+              width={150}
+              height={150}
+            />
           </Link>
           <p className="font-body-md text-on-surface-variant mb-6">
             Curating unforgettable journeys and building communities of passionate travelers.
@@ -28,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h4 className="font-label-bold text-primary mb-6">Destinations</h4>
+          <h4 className="font-label-bold text-[#0086c1] mb-6">Destinations</h4>
           <ul className="space-y-3 font-body-md text-on-surface-variant">
             <li><Link href="#" className="hover:text-primary transition-colors">India</Link></li>
             <li><Link href="#" className="hover:text-primary transition-colors">Southeast Asia</Link></li>
@@ -37,7 +43,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-label-bold text-primary mb-6">Trip Types</h4>
+          <h4 className="font-label-bold text-[#0086c1] mb-6">Trip Types</h4>
           <ul className="space-y-3 font-body-md text-on-surface-variant">
             <li><Link href="#" className="hover:text-primary transition-colors">Group Tours</Link></li>
             <li><Link href="#" className="hover:text-primary transition-colors">Solo Travel</Link></li>
@@ -46,7 +52,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-label-bold text-primary mb-6">Contact Us</h4>
+          <h4 className="font-label-bold text-[#0086c1] mb-6">Contact Us</h4>
           <ul className="space-y-3 font-body-md text-on-surface-variant">
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4" /> hello@traveltribes.com

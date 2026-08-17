@@ -28,12 +28,12 @@ export default function GallerySection() {
   ];
 
   return (
-    <section className="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
-      <motion.div 
+    <section className="py-10 px-grid-margin max-w-[1440px] mx-auto">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-6"
       >
         <h2 className="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-4">
           Life In The Tribe
@@ -42,7 +42,7 @@ export default function GallerySection() {
           Moments captured by our travelers. Real people, real adventures.
         </p>
       </motion.div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[100px]">
         {images.map((img, idx) => (
           <motion.div
             key={idx}

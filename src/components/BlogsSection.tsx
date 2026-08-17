@@ -26,8 +26,8 @@ export default function BlogsSection() {
   ];
 
   return (
-    <section className="py-section-gap px-grid-margin max-w-[1440px] mx-auto">
-      <motion.div 
+    <section className="py-10 px-grid-margin max-w-[1440px] mx-auto">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function BlogsSection() {
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             className="group cursor-pointer"
           >
-            <div className="rounded-xl overflow-hidden mb-4 h-64 relative">
+            <div className="rounded-xl overflow-hidden mb-4 h-50 md:h-64 relative">
               <Image
                 src={blog.img}
                 alt={blog.title}

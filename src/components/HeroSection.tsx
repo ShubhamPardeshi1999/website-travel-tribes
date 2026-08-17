@@ -19,7 +19,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center pt-24">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 rounded-b-4xl overflow-hidden">
         <Image
           src="/hero.webp"
           alt="Hero Background"
@@ -29,12 +29,12 @@ export default function HeroSection() {
         />
         <div className="absolute inset-0 bg-primary/40"></div>
       </div>
-      <div className="relative z-10 text-center px-grid-margin max-w-5xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 md:text-center px-grid-margin max-w-5xl mx-auto flex flex-col items-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-hero-display-mobile md:font-hero-display text-hero-display-mobile md:text-hero-display text-on-primary mb-8 drop-shadow-lg"
+          className="font-hero-display-mobile md:font-hero-display text-hero-display-mobile md:text-hero-display text-on-primary md:mb-8 drop-shadow-lg"
         >
           Find Your Tribe.<br />Travel Your Story.
         </motion.h1>

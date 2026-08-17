@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Carousel from "./ui/Carousel";
 
 export default function ReviewsSection() {
   const reviews = [
@@ -26,17 +27,20 @@ export default function ReviewsSection() {
   ];
 
   return (
-    <section className="py-section-gap bg-surface-container-low overflow-hidden">
-      <div className="px-grid-margin max-w-[1440px] mx-auto text-center">
-        <motion.h2 
+    <section className="py-10 bg-surface-container-low overflow-hidden">
+      <div className="max-w-[1440px] mx-auto text-center">
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-16"
+          className="px-grid-margin font-section-heading-mobile md:font-section-heading text-section-heading-mobile md:text-section-heading text-on-background mb-6"
         >
           Stories From The Tribe
         </motion.h2>
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
+        <Carousel
+          className="w-full pb-8"
+          slideClassName="md:flex-[0_0_50%] lg:flex-[0_0_33.333333%] pr-4 sm:pr-6"
+        >
           {reviews.map((review, idx) => (
             <motion.div
               key={idx}
@@ -44,10 +48,10 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
-              className="min-w-[300px] md:min-w-[400px] bg-surface p-8 rounded-2xl text-left snap-center shadow-sm"
+              className="bg-surface p-8 rounded-2xl text-left shadow-sm h-full"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0">
                   <Image
                     src={review.img}
                     alt={review.name}
@@ -65,7 +69,7 @@ export default function ReviewsSection() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );

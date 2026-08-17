@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "nav-scrolled" : ""
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "nav-scrolled" : "bg-white md:bg-transparent"
           }`}
       >
         <div className="flex justify-between items-center px-grid-margin py-6 w-full max-w-[1440px] mx-auto">
@@ -102,18 +102,15 @@ export default function Navbar() {
           >
             <motion.span
               animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-              className={`block w-6 h-[2px] rounded-full mb-1.5 transition-colors ${scrolled || isOpen ? "bg-primary" : "bg-on-primary"
-                }`}
+              className="block w-6 h-[2px] rounded-full mb-1.5 transition-colors bg-[#0086c1]"
             ></motion.span>
             <motion.span
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className={`block w-6 h-[2px] rounded-full mb-1.5 transition-colors ${scrolled || isOpen ? "bg-primary" : "bg-on-primary"
-                }`}
+              className="block w-6 h-[2px] rounded-full mb-1.5 transition-colors bg-[#0086c1]"
             ></motion.span>
             <motion.span
               animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-              className={`block w-6 h-[2px] rounded-full transition-colors ${scrolled || isOpen ? "bg-primary" : "bg-on-primary"
-                }`}
+              className="block w-6 h-[2px] rounded-full transition-colors bg-[#0086c1]"
             ></motion.span>
           </button>
         </div>
